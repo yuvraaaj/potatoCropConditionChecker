@@ -1,0 +1,107 @@
+{% extends 'layout.html' %} {% block body %}
+
+              <br>
+             {% for predict in predictionlist %}
+
+             <!-- For Ph level -->
+              {% if ph>=5.6 && ph<=6}
+              <h2> Ph level is ideal for the crop. </h2>
+              {% else %}
+              <h2> 
+                <strong>Ph level is not ideal for the crop.</strong>
+                
+                You should:
+                <ol>
+                 <li>sprinkle about 1 1/2 pounds of horticultural sulfur with a fertilizer spreader over every 100 square feet of garden space to decrease the pH by one point.Lowering soil pH is not a quick process and requires planning to let the soil rest until the following year.</li>  
+                
+                 <li>potatoes grow best in an acidic soil with a pH level between 5.2 and 6.0. It is possible for them to grow in a higher pH, but the risk of developing a disease called “scab” is more likely.
+                 at pH values above 7.5, nutrient availability, in particular of phosphorus and the micronutrients,can be reduced, even though high total amounts of these elements may be present in the soil.</li>
+                 </ol>
+              </h2>
+              {% endif %}
+
+
+              <!-- For Moisture Content -->
+               {% if M>=500 && M<=700 %}
+               <h2>The Moisture level is ideal for the crop.</h2>
+               {% elif M<500 %}
+               <p>
+                 <strong>Moisture level is not ideal for the crop.</strong>
+
+                 You should:
+                 <ol>
+                   <li>
+                    <strong>Spraying</strong>
+                    <br>																				
+                    Whether you’re using the tractor to spray on that extra moisture acre by acre, dropping water from aerial drones or manned aircraft or setting up a network of sprinklers, you’re going to face problems with this method of increasing soil moisture. It’s just not that efficient.																				
+                    While the aerial method of spraying your fields sounds time efficient, it really isn’t the best option. Of the 3 spraying methods mentioned above, it’s the most susceptible to drift and evaporation. It’s just not that accurate unless you have the funds available to invest in some high-tech drone equipment that can calculate how to drop the water most efficiently.																				
+                    Using a tractor to drive through your fields spraying water does give you a greater element of control, but it is also very time consuming. We’d recommend this if you just need to add moisture for the short term until the wet weather picks back up.																				
+                   </li>
+                   <li>
+                     <strong>Drip Irrigation</strong>
+                     <br>
+                     Drip irrigation is much like a network of sprinklers but much better. This technology isn’t the cheapest and it does have some disadvantages, however it really seems to be the best solution to nourish dry fields that need some extra soil moisture to see your crops through.																									
+                     A rigid structure of pipes set up throughout your fields can drip water and nutrient solutions right to the base of each plant, reducing the chances of evaporation and delivering water only where it’s needed. This is a great system but takes quite some planning to set up and remove when you need to harvest crops. Once it’s all set up you can adjust the pressure to drip more or less water across your field depending on the soil moisture levels. One of the main problems with this irrigation network is the tiny holes that let water drip out of the pipes – they can get clogged up and aren’t suitable for herbicides that need to be sprinkled to be activated.																									
+                     One ingenious solution that we’ve seen in recent years is the Figaro irrigation platform of sub-soil material tubes that slowly ‘weep’ water to plants only when the soil moisture level reduces. This means there’s no chance of evaporation at all as the water is delivered straight to the roots. Still, you’ll need to go through the hassle of removing it before/after harvest, and it’s not so straightforward to fix if there’s a problem somewhere within the underground network.																									
+                   </li>
+                 </ol>
+                </p>
+                {% else %}
+                <p>
+                  <strong>The moisture level is not ideal.</strong>
+                  You should:
+                  <ol>
+                    <li>
+                      <strong>Tillage</strong>
+                      <br>
+                      By tilling your soil, you’re reducing moisture in a number of ways. Firstly, any moisture that’s lingering below the top soil layer will be brought to the top to dry out or evaporate. Secondly, if your fields are hard and without any cracks for water to drain, tilling can introduce water that would otherwise build up and flood down into the soil to be drained away.																				
+                      You’ll want to be careful with this method. While breaking up the soil will allow moisture to penetrate, you risk too much soil degradation if you’re tilling after every rainfall, which could be just too much for your fields to handle.																				
+                      There are further disadvantages to this method, including exposing top soil which could result in soil erosion and compacting the soil further, preventing moisture from draining.																				
+                      This method is best if you’re looking for a 1 time, quick solution before you’re ready to sow. It is not suitable in the long term.																				
+                    </li>
+                    <li>
+                      <strong>Burning</strong>
+                      <br>
+                      Burning any remaining crops or crop residue is another method of reducing soil moisture levels, although it’s not the most popular. Many farmers believe that by burning off the old, dry or unwanted vegetation you make room for fresh new shoots and healthy plants to grow.																					
+                      Burning residue crops, weeds and other vegetation on fields will reduce moisture by evaporating it from the soil. Burning will also kill off any pests and even help to combat diseases… however fire isn’t selective. It will also burn off the micro bacteria and organisms living in the soil that your fields need to maintain soil nutrition levels and keep the fields aerobic and porous.																					
+                      You’ll need to be careful that your fire doesn’t spread to other fields, hedgerows, woodland or residential areas. Keep the fire on the field and take steps to control it.																					
+                    </li>
+                  </ol>
+                </p>
+              {% endif %}
+
+              <!-- The temperature for it -->
+               {% if T>=16 && T<=21 %}
+               <h2> The Temperature is ideal for the crop.</h2>
+               {% elif T<16 %}
+               <p>
+                 <strong>The temperature is low, you can:</strong>
+                 <ol>
+                   <li>Frost free growing season.</li>
+                   <li>Adjusting the sowing time.</li>
+                   <li>Selection of resistant varieties.</li>
+                   <li>Sprinkler irrigation.</li>
+                 </ol>
+               </p>
+               {% else %}
+               <p>
+                 <strong>The temperature is high, you can:</strong>
+                 <ol>
+                   <li>Naturally Ventilate the Greenhouse.</li>
+                   <li>Ventilate with Fans.</li>
+                   <li>Use Shade.</li>
+                   <li>Cooling with Water.</li>
+                 </ol>
+               </p>
+              {% endif %}
+
+
+              <!-- For the HUMIDITY level -->
+               {% if H>=95 %}
+               <h2>The humidity level is ideal for the crop.</h2>
+               {% else %}
+               <h2>Humidity level is no ideal. Solution is to grow the crop under controlled atmoshphere.</h2>
+              {% endif %}
+              <br>
+              <br>
+{% endblock %}
